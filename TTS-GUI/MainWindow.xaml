@@ -20,9 +20,11 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Button x:Name="speakaloud" Content="朗读" Click="speakaloud_Click"/>
-                <Button x:Name="speaktofile" Grid.Column="1" Content="输出到文件" Click="speaktofile_Click"/>
+                <Button x:Name="speakstop" Grid.Column="1" Content="停止" Click="speakstop_Click"/>
+                <Button x:Name="speaktofile" Grid.Column="2" Content="输出到文件" Click="speaktofile_Click"/>
             </Grid>
             <TextBox x:Name="speak_content" TextWrapping="Wrap" AcceptsReturn="True" Height="350" VerticalScrollBarVisibility="Auto"/>
         </StackPanel>

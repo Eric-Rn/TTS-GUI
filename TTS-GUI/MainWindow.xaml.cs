@@ -31,7 +31,7 @@ namespace TTS_GUI
             {
                 speechSynthesizer.SetOutputToDefaultAudioDevice();
                 speechSynthesizer.SelectVoice(installedVoices[voice_sel.SelectedIndex]);
-                speechSynthesizer.Speak(speak_content.Text);
+                speechSynthesizer.SpeakAsync(speak_content.Text);
             }
             catch (Exception ex)
             {
@@ -58,6 +58,12 @@ namespace TTS_GUI
             {
                 MessageBox.Show(ex.Message, ex.Source, MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void speakstop_Click(object sender, RoutedEventArgs e)
+        {
+            speechSynthesizer.Dispose();
+            speechSynthesizer = new SpeechSynthesizer();
         }
     }
 }
